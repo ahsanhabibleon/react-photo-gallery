@@ -14,7 +14,6 @@ function BookApp() {
   };
 
   const getPhotos = async () => {
-    // const _url = "https://api.unsplash.com/photos?&query=" + query + "&client_id=" + access_key;
     const _url = "https://api.pexels.com/v1/search?per_page=20&query=" + query;
     setIsLoading(true)
     await fetch(_url, {

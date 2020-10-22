@@ -2,7 +2,6 @@ import React from 'react'
 import './book.scss'
 
 export default function Book(props) {
-    // const { title, src, author } = props;
     const { url, src, author } = props;
     return (
         <article className="book">
