@@ -3,10 +3,10 @@ import './book.scss'
 
 export default function Book(props) {
     // const { title, src, author } = props;
-    const { src, author } = props;
+    const { url, src, author } = props;
     return (
         <article className="book">
-            <a href="#" className="book-inner">
+            <a href={url} className="book-inner" target="_blank" rel='noreferrer noopener'>
                 <figure>
                     <img src={src} alt="good morning 1" />
                 </figure>

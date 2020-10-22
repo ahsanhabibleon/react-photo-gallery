@@ -4,8 +4,6 @@ import Book from './Book/index';
 import './index.scss';
 
 function BookApp() {
-  const access_key = process.env.REACT_APP_ACCESSKEY;
-  const pexels_access_key = process.env.PEXELS_API_KEY;
   const [isLoading, setIsLoading] = useState(false)
   const [isError, setIsError] = useState(false)
   const [splashImg, setSplashImg] = useState([])
@@ -57,14 +55,14 @@ function BookApp() {
   </div>
 
   const template = splashImg.map(x => (
-    <Book src={x.src.medium} author={x.photographer} key={x.id} />
+    <Book url={x.url} src={x.src.medium} author={x.photographer} key={x.id} />
   ))
 
   return (
     <section className="book-app" id="book-app">
       <div className="container">
         <h1 className="text-center">
-          Get Photos From <a href="https://www.pexels.com/" target="_blank">Pexels.com</a>
+          Get Photos From <a href="https://www.pexels.com/" target="_blank" rel='noreferrer noopener'>Pexels.com</a>
         </h1>
 
         <div className="search-bar text-center">
