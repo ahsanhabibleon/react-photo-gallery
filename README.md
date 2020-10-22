@@ -1,6 +1,7 @@
 ## Demo app
+[View Demo](https://pexels-photo-gallery.netlify.app/).
 
-https://pexels-photo-gallery.netlify.app/
+
 
 
 
