@@ -4,7 +4,6 @@ import Book from './Book/index';
 import './index.scss';
 
 function BookApp() {
-  const access_key = process.env.REACT_APP_ACCESSKEY;
   const [isLoading, setIsLoading] = useState(false)
   const [isError, setIsError] = useState(false)
   const [splashImg, setSplashImg] = useState([])
@@ -42,19 +41,8 @@ function BookApp() {
       .catch(error => setIsError(error))
   }
 
-  const getPhotosFromUnplash = async () => {
-    const _url = `https://api.unsplash.com/search/photos?&query=${query}&client_id=${access_key}`;
-    await fetch(_url)
-      .then(res => res.json())
-      .then(res => {
-        // console.log(res.results)
-        setSplashImg(res.results);
-      })
-  }
-
   useEffect(() => {
     getPhotosFromPexels();
-    // getPhotosFromUnplash();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
@@ -70,9 +58,6 @@ function BookApp() {
 
     //for pexels photos
     <Book url={x.url} src={x.src.medium} author={x.photographer} key={x.id} />
-
-    //for Unplash photos
-    // <Book url={x.links.html || x.url} src={x.urls.small} author={x.user.username} key={x.id} />
   ))
 
   return (
